@@ -3,7 +3,7 @@
 
  function useCurrency(currency:string){
 
-   const[Data,setData] = useState({})
+   const [Data, setData] = useState<Record<string, number>>({});
 
      useEffect(()=> {
 

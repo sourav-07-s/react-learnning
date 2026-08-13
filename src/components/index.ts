@@ -1,4 +1,4 @@
- import {CurrencyConverter } from "./pages/CurrencyConverter" ;
- import InputBox from "./components/Inputbox"
+
+ import InputBox from "./Inputbox"
 
  export  {InputBox} ;
