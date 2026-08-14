@@ -47,12 +47,18 @@ function Header() {
               </li>
 
               <li>
-                <Link
+               <NavLink
+                    
                   to="/about"
-                  className="block py-2 pr-4 pl-3 text-gray-700 hover:text-orange-700"
+                  className={({isActive})=> `
+                  
+                  block py-2 pr-4 pl-3
+                  ${isActive ? "text-orange-700" : " text-gray-700 "}
+                   text-gray-700 hover:text-orange-700
+                  `}
                 >
                   About
-                </Link>
+                </NavLink>
               </li>
 
               <li>
