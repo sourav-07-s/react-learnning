@@ -5,8 +5,6 @@ import { RouterProvider,createBrowserRouter } from 'react-router-dom'
 import { useLoaderData } from 'react-router-dom'
 
 import { App } from './App'
- import Header from './components/Header/Header'
-import Footer from './components/Footer/Footer'
 import Home from './components/Home/Home'
 import  About  from './components/About/About'
 import Github from './components/Github/Github'
