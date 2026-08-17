@@ -10,12 +10,16 @@ import userContext from "./context/userContext"
 
     const {setuser} = useContext(userContext)
 
+    
+
+
     const handelsubmit = (e:any) => {
-     e.preventdefault() ;
+     e.preventDefault();
 
-     setuser({userName , setuserName})
+     setuser({userName,setuserName})
 
-
+   setuserName("")
+   setpasswrod("")
         
     }
 
