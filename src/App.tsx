@@ -1,12 +1,41 @@
 
-
+import { ThemeProvider } from "./components/context/Theme"
+import { useState , useEffect } from "react"
 
 
 
 export const App = () => {
 
+  const [ThemeMode,setThemeMode] = useState("light") ;
+
+  
+
+const lightTheme = ()=> {
+
+  setThemeMode("light")
+}
+
+const darkTheme = ()=> {
+  setThemeMode("dark")
+}
+
+
+// actual theme change using the Context Api
+
+
+useEffect(()=>{
+  document.querySelector('html')?.classList.remove("light","dark");
+  document.querySelector("html")?.classList.add(ThemeMode)
+
+
+},[ThemeMode]
+)
+
 
   return (
+
+  <ThemeProvider value={{ ThemeMode ,darkTheme,lightTheme}}>
+
     <div
     className =" flex flex-wrap min-h-screen items-center"
     >
@@ -25,6 +54,7 @@ export const App = () => {
 
 
     </div>
+    </ThemeProvider>
       
    
     
