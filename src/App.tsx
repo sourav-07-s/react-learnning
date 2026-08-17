@@ -1,7 +1,8 @@
 
 import { ThemeProvider } from "./components/context/Theme"
 import { useState , useEffect } from "react"
-
+import ThemeButton from "./components/button";
+import Card from "./components/card";
 
 
 export const App = () => {
@@ -37,17 +38,21 @@ useEffect(()=>{
   <ThemeProvider value={{ ThemeMode ,darkTheme,lightTheme}}>
 
     <div
-    className =" flex flex-wrap min-h-screen items-center"
-    >
+        className={`flex min-h-screen w-full flex-wrap items-center transition-colors duration-300 ${
+          ThemeMode === "dark"
+            ? "bg-gray-900"
+            : "bg-white"
+        }`}
+      >
       <div className="w-full">
          <div className="w-full max-w-sm mx-auto flex justify-end mb-4">
   
-              {/* thmebtn */ }
+              {<ThemeButton/> }
          </div>
 
          <div className = "w-full max-w-sm mx-auto"
          >
-          {/* card */}
+          {<Card/>}
          </div>
 
       </div>
