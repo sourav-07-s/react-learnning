@@ -1,7 +1,4 @@
-import React from 'react'
-import UserContextProvider from './components/context/UseContextProvider'
-import { Login } from './components/Login'
-import Profile from './components/Profile'
+
 
 
 
@@ -10,12 +7,26 @@ export const App = () => {
 
 
   return (
-    <UserContextProvider>
-    <h1>hello i am Context </h1>
-     <Login/>
-     <Profile/>
+    <div
+    className =" flex flex-wrap min-h-screen items-center"
+    >
+      <div className="w-full">
+         <div className="w-full max-w-sm mx-auto flex justify-end mb-4">
+  
+              {/* thmebtn */ }
+         </div>
+
+         <div className = "w-full max-w-sm mx-auto"
+         >
+          {/* card */}
+         </div>
+
+      </div>
+
+
+    </div>
       
-    </UserContextProvider>
+   
     
   )
 }
