@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 
 import {TodoProvider} from "./components/context/INdex"
+import { todo } from 'node:test';
 
 
 
@@ -17,14 +18,20 @@ export const App = () => {
   const updateTodo = (id:any,todo: any)=>{
     setTodos ((prev)=>prev.map( (prevTodo) => (prevTodo.id === id ? todo : prevTodo)) )
   }
-  const toogleComplete = ()=>{}
-  const deleteTodo =()=> {}
+  const toggleComplete = (id:any)=>{
+    setTodos((prev)=>prev.map((prevTodo)=> prevTodo === id ? {...prevTodo, completed: !prevTodo. completed } : prevTodo))
+  }
+
+  const deleteTodo =(id:any)=> {
+
+    setTodos((prev)=>prev.filter((todo)=>todo.id !== id))
+  }
 
 
 
   return (
 
-<TodoProvider value={{todos,addTodo,updateTodo,deleteTodo,toogleComplete}}>
+<TodoProvider value={{ToDos,addTodo,updateTodo,deleteTodo,toggleComplete}}>
   
      <div className="bg-[#172842] min-h-screen py-8">
         <div className="w-full max-w-2xl mx-auto shadow-md rounded-lg px-4 py-3 text-white">
