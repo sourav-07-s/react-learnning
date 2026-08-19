@@ -24,13 +24,15 @@ function TodoForm() {
       onSubmit={add}
       className="flex shadow rounded-lg overflow-hidden mb-4"
     >
-      <input
-        type="text"
-        placeholder="Write a Todo..."
-        value={todo}
-        onChange={(e) => setTodo(e.target.value)}
-        className="w-full border border-black/10 rounded-l-lg px-3 outline-none duration-150 bg-white/20 py-1.5"
-      />
+   <input
+  id="todo"
+  name="todo"
+  type="text"
+  placeholder="Write a Todo..."
+  value={todo}
+  onChange={(e) => setTodo(e.target.value)}
+  className="w-full rounded-l-lg border border-black/10 bg-white px-3 py-2 text-black placeholder:text-gray-500 outline-none"
+/>
 
       <button
         type="submit"

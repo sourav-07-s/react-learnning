@@ -14,7 +14,14 @@ export const ToDoContext = createContext({
     ],
   addTodo: (todo: {}) => {},
 
-  updateTodo: (id: number, todo: string) => {},
+  updateTodo: (
+  id: number,
+  todo: {
+    id: number;
+    todo: string;
+    completed: boolean;
+  }
+) => {},
 
   deleteTodo: (id: number) => {},
 

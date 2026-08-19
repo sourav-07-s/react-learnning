@@ -1,8 +1,9 @@
-import React, { useState,useEffect } from 'react'
+import  { useState,useEffect } from 'react'
 
 import {TodoProvider} from "./components/context/INdex"
 import TodoForm from './components/TO-Do/TodoForm';
 import TodoItem from './components/TO-Do/TodoItem';
+
 
 
 
@@ -14,15 +15,33 @@ export const App = () => {
 
  const [todos, setTodos] = useState<any[]>([]);
   
-  const addTodo = (todo: any)=>{
-    setTodos ((prev)=>[{id:Date.now(),...todo},...prev])
-  } 
+ const addTodo = (todo: any) => {
+  const newTodo = {
+    id: Date.now(),
+    ...todo,
+  };
+
+  
+
+  setTodos((prev) => [newTodo, ...prev]);
+}
+
   const updateTodo = (id:any,todo: any)=>{
     setTodos ((prev)=>prev.map( (prevTodo) => (prevTodo.id === id ? todo : prevTodo)) )
   }
-  const toggleComplete = (id:any)=>{
-    setTodos((prev)=>prev.map((prevTodo)=> prevTodo === id ? {...prevTodo, completed: !prevTodo. completed } : prevTodo))
-  }
+
+ const toggleComplete = (id: number) => {
+  setTodos((prev) =>
+    prev.map((prevTodo) =>
+      prevTodo.id === id
+        ? {
+            ...prevTodo,
+            completed: !prevTodo.completed,
+          }
+        : prevTodo
+    )
+  );
+};
 
   const deleteTodo =(id:any)=> {
 
@@ -63,7 +82,7 @@ useEffect(() => {
             <TodoForm/>
           </div>
 
-         <div className="mt-4 flex flex-col gap-3">
+        <div className="mt-4 flex flex-col gap-3">
   {todos.map((todo) => (
     <TodoItem
       key={todo.id}
