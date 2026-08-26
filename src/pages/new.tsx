@@ -2,6 +2,16 @@ import React from 'react'
 
 export const New = () => {
   return (
-    <div>new</div>
+    <>
+     <nav> 
+
+        <ul>
+            <li>Home </li>
+            <li> contact me </li>
+            <li> about </li>
+        </ul>
+     </nav>
+    
+    </>
   )
 }
