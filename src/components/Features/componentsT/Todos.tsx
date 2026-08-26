@@ -46,3 +46,6 @@ export const Todos = () => {
         </div>
     );
 };
+
+
+export tods ;
